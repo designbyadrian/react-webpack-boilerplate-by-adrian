@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
@@ -23,5 +24,9 @@ const plugins = [
 ];
 
 module.exports = merge(baseConfig, {
+  mode: 'production',
+  entry: [
+    path.resolve(process.cwd(), 'app/index.js'),
+  ]
   plugins: plugins,
 });
