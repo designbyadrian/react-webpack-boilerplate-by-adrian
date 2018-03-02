@@ -1,0 +1,57 @@
+{
+  "name": "react-webpack-boilerplate-by-adrian",
+  "version": "1.0.0",
+  "description": "React 16 and Webpack 4 setup with React-Router, MobX state management, i18n localisation, Hot Module Reload, Node Express server, ES6 transpiling, and tools for code quality and testing.",
+  "scripts": {
+    "build": "webpack --mode production --config ./config/webpack.prod.js --color --progress",
+    "start": "cross-env NODE_ENV=development node server",
+    "start:dev": "npm run start",
+    "start:prod": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "hmr",
+    "router",
+    "mobx",
+    "i18n",
+    "babel",
+    "eslint",
+    "sasslint"
+  ],
+  "author": "Adrian von Gegerfelt <adrian@designbyadrian.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^2.0.10"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "chalk": "^2.3.1",
+    "compression": "^1.7.2",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "express": "^4.16.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.4",
+    "ip": "^1.1.5",
+    "isdev": "^1.0.1",
+    "minimist": "^1.2.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
+    "webpack": "^4.0.1",
+    "webpack-dev-middleware": "^3.0.0",
+    "webpack-hot-middleware": "^2.21.1",
+    "webpack-merge": "^4.1.2"
+  }
+}
