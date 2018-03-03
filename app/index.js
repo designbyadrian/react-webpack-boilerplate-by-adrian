@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
+import { Provider } from 'mobx-react';
+import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
+import { Router } from 'react-router';
 
-import './index.sass';
+import Routes from './routes';
 
-const App = () => {
-  return (
-    <div styleName="monkey">
-      <p>React there!</p>
-    </div>
-  );
+const browserHistory = createBrowserHistory();
+const routingStore = new RouterStore();
+
+const stores = {
+  routing: routingStore,
 };
-export default App;
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const history = syncHistoryWithStore(browserHistory, routingStore);
+
+ReactDOM.render(
+  <Provider {...stores}>
+    <Router history={history}>
+      <Routes />
+    </Router>
+  </Provider>,
+  document.getElementById('root'),
+);

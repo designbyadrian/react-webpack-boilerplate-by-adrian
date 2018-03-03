@@ -3,6 +3,10 @@
     "env",
     "react"
   ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-decorators"
+  ],
   "env": {
     "development": {
       "presets": ["react-hmre"],
