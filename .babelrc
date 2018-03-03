@@ -5,7 +5,30 @@
   ],
   "env": {
     "development": {
-      "presets": ["react-hmre"]
+      "presets": ["react-hmre"],
+      "plugins": [
+        ["babel-plugin-react-css-modules", {
+          "generateScopedName": "[path]__[name]_[local]_[hash:base64:5]",
+          "webpackHotModuleReloading": true,
+          "filetypes": {
+            ".sass": {
+              "syntax": "postcss-sass"
+            }
+          }
+        }]
+      ]
+    },
+    "production": {
+      "plugins": [
+        ["babel-plugin-react-css-modules", {
+          "generateScopedName": "[name]-[local]-[hash:base64:6]",
+          "filetypes": {
+            ".sass": {
+              "syntax": "postcss-sass"
+            }
+          }
+        }]
+      ]
     }
   }
 }

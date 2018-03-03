@@ -1,8 +1,10 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const baseConfig = require('./webpack.base.js');
+
+console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
 
 const plugins = [
   new HtmlWebPackPlugin({
@@ -20,13 +22,11 @@ const plugins = [
       minifyURLs: true,
     },
     inject: true,
-  })
+  }),
 ];
 
 module.exports = merge(baseConfig, {
   mode: 'production',
-  entry: [
-    path.resolve(process.cwd(), 'app/index.js'),
-  ]
+  entry: path.join(process.cwd(), 'app/index.js'),
   plugins: plugins,
 });
