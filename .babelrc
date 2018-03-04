@@ -5,14 +5,15 @@
   ],
   "plugins": [
     "transform-decorators-legacy",
-    "transform-decorators"
+    "transform-decorators",
+    "transform-class-properties"
   ],
   "env": {
     "development": {
       "presets": ["react-hmre"],
       "plugins": [
         ["babel-plugin-react-css-modules", {
-          "generateScopedName": "[path]__[name]_[local]_[hash:base64:5]",
+          "generateScopedName": "[path]-[name]_[local]_[hash:base64:5]",
           "webpackHotModuleReloading": true,
           "filetypes": {
             ".sass": {

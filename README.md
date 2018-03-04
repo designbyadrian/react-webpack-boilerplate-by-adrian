@@ -1,5 +1,7 @@
 # React Webpack Boilerplate by Adrian
 
+> ⚠️ **Caution:** Unfinished
+
 React 16 and Webpack 4 setup with the following features:
 
 • React-Router • MobX state management • i18n localisation • Hot Module Reload • Node Express server • ES6 transpiling with Babel • tools for code quality and testing.

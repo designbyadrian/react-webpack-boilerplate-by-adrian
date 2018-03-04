@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Menu from './components/MainMenu';
+import Menu from '../MainMenu';
 
-import Home from './containers/home';
-import Settings from './containers/settings';
-import NoMatch from './containers/nomatch';
+import Home from '../../containers/Home';
+import Settings from '../../containers/Settings';
+import NoMatch from '../../containers/nomatch';
 
 export default () => (
   <Fragment>

@@ -34,7 +34,7 @@ module.exports = {
                 minimize: !isDev,
                 modules: true,
                 localIdentName: isDev
-                  ? '[path]__[name]_[local]_[hash:base64:5]'
+                  ? '[path]-[name]_[local]_[hash:base64:5]'
                   : '[name]-[local]-[hash:base64:6]',
               },
             },

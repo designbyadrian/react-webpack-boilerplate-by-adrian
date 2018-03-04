@@ -5,13 +5,16 @@ import { Provider } from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { Router } from 'react-router';
 
-import Routes from './routes';
+import App from './components/App';
+
+import postStore from './stores/posts';
 
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 
 const stores = {
   routing: routingStore,
+  postStore,
 };
 
 const history = syncHistoryWithStore(browserHistory, routingStore);
@@ -19,7 +22,7 @@ const history = syncHistoryWithStore(browserHistory, routingStore);
 ReactDOM.render(
   <Provider {...stores}>
     <Router history={history}>
-      <Routes />
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root'),
