@@ -15,6 +15,7 @@ and the ability to segment your styles into components. Here's how to style your
             📄 mycomponent.sass
 ```
 
+> ***Note:*** *you are free to use SASS or SCSS at your leisure. If you prefer something else, please see [configuration](configuration.md).*
 
 In index.js, import your stylesheet with: `import './index.sass';`
 
@@ -26,3 +27,11 @@ Your component will now have completely unique styles, unaffected by other compo
 
 If you're using a CSS framework like Bootstrap, you might want to have a global reference.
 Then use the `className` attribute like so: `<Component styleName="col-12 col-md-6" />`
+
+## Framework
+
+// todo
+
+Bootstrap 4
+
+How to uninstall

@@ -1,8 +1,8 @@
 # React Webpack Boilerplate by Adrian
 
-> ⚠️ **Caution:** Unfinished
+> ⚠️ ***Caution:*** *Unfinished! Version 0.0.1*
 
-React 16 and Webpack 4 setup with the following features:
+This boilerplate gives you an SAP with dynamic routing, and has the following features:
 
 • React-Router • MobX state management • i18n localisation • Hot Module Reload • Node Express server • ES6 transpiling with Babel • tools for code quality and testing.
 
@@ -26,10 +26,10 @@ Production:
 
 ## 📖 Documentation
 
-* Code Quality
+* [Code Quality](docs/codequality.md)
 * [Configuration](docs/configuration.md)
 * [Routing](docs/routing.md)
 * [Server](docs/server.md)
 * [Structure](docs/structure.md)
 * [Styling](docs/styling.md)
-* Testing
+* [Testing](docs/testing.md)
