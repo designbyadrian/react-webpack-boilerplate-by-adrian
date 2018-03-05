@@ -1,6 +1,8 @@
 import React from 'react';
 import { inject, observer, PropTypes } from 'mobx-react';
 
+import Card from '../Card'
+
 @inject('postStore')
 @observer
 class Stack extends React.Component {
@@ -15,7 +17,7 @@ console.log("posts", this.props);
     return (
       <ul>
         {posts.map(post =>
-          <li>{post.slug}</li>
+          <Card {...post} />
         )}
       </ul>
     )
