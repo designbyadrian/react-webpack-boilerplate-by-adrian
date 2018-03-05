@@ -1,11 +1,18 @@
 # Routing
 
-// TODO
+React Webpack Boilerplate by Adrian uses [React Router v4]() for easy-to-use routing between modules. To access route information and functions from a component, mobx-react-router provides a `routing` store ready to be injected.
 
-React Router 4
+The example has three basic routes, and they are descibed in
 
-mobx-react-router
+```
+📁 app
+    📁 components
+        📁 App
+            📄 index.js
+```
 
-> **components:** encapsulated React components that are driven solely by props and don't talk to Redux. Same as “dumb components”. They should stay the same regardless of your router, data fetching library, etc.
+Please see the [React Router]() documentation for advanced usage.
 
-> **containers** React components that are aware of Redux, Router, etc. They are more coupled to the app. Same as “smart components”.
+## JWT Authentication
+
+[gothinkster/react-mobx-realworld-example-app](https://github.com/gothinkster/react-mobx-realworld-example-app/tree/master/src) has a very good example how to enable authentication.
