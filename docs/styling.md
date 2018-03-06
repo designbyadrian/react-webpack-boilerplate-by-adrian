@@ -30,17 +30,22 @@ Then use the `className` attribute like so: `<Component styleName="col-12 col-md
 
 ## Framework
 
-// todo
+For demonstration purposes, React 16 Webpack Boilerplate comes with a CSS framework.
 
 ### Bootstrap 4
 
+#### Why all the weird webpack rules?
+
+You could add a <link> element in head, linking to the Bootstrap CDN, but then you'd lose the customisation
+possibilities displayed in `stylesheets/global.sass`.
+
 #### How to uninstall
 
-This is also useful to give hints how to switch to another framework like Foundation.
+This is also useful to give hints on how to switch to another framework like Foundation.
 
-yarn remove bootstrap
+`$ yarn remove bootstrap`
 
-/stylesheets
+Check referenecs in `/stylesheets`
 
 Find "Global block for CSS framework" in config/webpack.base.js
 
