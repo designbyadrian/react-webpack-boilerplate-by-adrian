@@ -19,7 +19,8 @@
             ".sass": {
               "syntax": "postcss-sass"
             }
-          }
+          },
+          "exclude": "app/stylesheets/global.sass"
         }]
       ]
     },
@@ -31,7 +32,8 @@
             ".sass": {
               "syntax": "postcss-sass"
             }
-          }
+          },
+          "exclude": "app/stylesheets/global.sass"
         }]
       ]
     }

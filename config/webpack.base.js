@@ -22,9 +22,32 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      // Global block for CSS framework
       {
         test: /\.(scss|sass)$/,
-        exclude: /node_modules/,
+        include: /stylesheets\/global/,
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: !isDev,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [require('autoprefixer')]
+              },
+            },
+            'sass-loader'
+          ],
+        }),
+      },
+      {
+        test: /\.(scss|sass)$/,
+        exclude: [/node_modules/, /stylesheets\/global/],
         use: extractCSS.extract({
           fallback: 'style-loader',
           use: [
@@ -44,7 +67,7 @@ module.exports = {
                 plugins: () => [require('autoprefixer')]
               },
             },
-            'sass-loader',
+            'sass-loader'
           ],
         }),
       },

@@ -32,6 +32,16 @@ Then use the `className` attribute like so: `<Component styleName="col-12 col-md
 
 // todo
 
-Bootstrap 4
+### Bootstrap 4
 
-How to uninstall
+#### How to uninstall
+
+This is also useful to give hints how to switch to another framework like Foundation.
+
+yarn remove bootstrap
+
+/stylesheets
+
+Find "Global block for CSS framework" in config/webpack.base.js
+
+Find "exclude" in .babelrc
