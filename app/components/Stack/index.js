@@ -13,13 +13,15 @@ class Stack extends React.Component {
 
   render() {
     const { posts, isLoading } = this.props.postStore;
-console.log("posts", this.props);
+
     return (
-      <ul>
+      <div className="row">
         {posts.map(post =>
-          <Card {...post} />
+          <div className="col-12 col-sm-6 col-md-4 mb-1">
+            <Card key={post.id} {...post} />
+          </div>
         )}
-      </ul>
+      </div>
     )
   }
 }
