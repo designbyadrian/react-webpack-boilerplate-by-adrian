@@ -7,7 +7,8 @@
     "start": "cross-env NODE_ENV=development node server",
     "start:dev": "npm run start",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
   },
   "keywords": [
     "react",
@@ -31,6 +32,7 @@
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.3",
     "babel-plugin-react-css-modules": "^3.3.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -56,6 +58,7 @@
     "html-webpack-plugin": "^3.0.4",
     "ip": "^1.1.5",
     "isdev": "^1.0.1",
+    "jest": "^22.4.2",
     "minimist": "^1.2.0",
     "mobx": "^3.6.1",
     "mobx-react": "^4.4.2",
@@ -160,9 +163,33 @@
     "settings": {
       "import/resolver": {
         "webpack": {
-          "config": "./internals/webpack/webpack.prod.babel.js"
+          "config": "./config/webpack.prod.js"
         }
       }
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "app/**/*.{js,jsx}",
+      "!app/**/*.test.{js,jsx}",
+      "!app/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 98,
+        "branches": 91,
+        "functions": 98,
+        "lines": 98
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/config/tests/mocks/cssModule.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/tests/mocks/image.js"
+    },
+    "testRegex": ".*\\.test\\.js$"
   }
 }

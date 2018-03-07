@@ -1,13 +1,15 @@
 import { observable, action, computed } from 'mobx';
 
-import agent from '../agent';
-
-export class PostStore {
+export default class PostStore {
   @observable isLoading = false;
   @observable postRegistry = observable.map();
 
   @computed get posts() {
     return this.postRegistry.values();
+  }
+
+  constructor(api) {
+    this.api = api;
   }
 
   getPost(slug) {
@@ -16,7 +18,8 @@ export class PostStore {
 
   @action loadPosts() {
     this.isLoading = true;
-    return agent.Posts.all()
+
+    return this.api.all()
       .then(action(({ posts, count }) => {
         this.postRegistry.clear();
         posts.forEach(post => this.postRegistry.set(post.slug, post));
@@ -31,7 +34,7 @@ export class PostStore {
       if (post) return Promise.resolve(post);
     }
     this.isLoading = true;
-    return agent.Posts.get(slug)
+    return this.api.get(slug)
       .then(action(({ post }) => {
         this.postRegistry.set(post.slug, post);
         return post;
@@ -39,5 +42,3 @@ export class PostStore {
       .finally(action(() => { this.isLoading = false; }));
   }
 }
-
-export default new PostStore();

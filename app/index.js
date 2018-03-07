@@ -7,14 +7,15 @@ import { Router } from 'react-router';
 
 import App from './components/App';
 
-import postStore from './stores/posts';
+import agent from './agent';
+import PostStore from './stores/posts';
 
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 
 const stores = {
   routing: routingStore,
-  postStore,
+  postStore: new PostStore(agent.Posts),
 };
 
 const history = syncHistoryWithStore(browserHistory, routingStore);
