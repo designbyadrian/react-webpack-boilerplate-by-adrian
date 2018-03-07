@@ -1,6 +1,7 @@
 # React Webpack Boilerplate by Adrian
 
-> ⚠️ ***Caution:*** *Unfinished! Version 0.0.1*
+> ⚠️ ***Caution:*** This is a boilerplate for demonstration purposes. Although based on boilerplates for production,
+take extra care if you wish to use this in your own project. Check "best practices" mentioned in [Structure](docs/structure.md).
 
 This boilerplate gives you an SAP with dynamic routing, and has the following features:
 

@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-boilerplate-by-adrian",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React 16 and Webpack 4 setup with React-Router, MobX state management, i18n localisation, Hot Module Reload, Node Express server, ES6 transpiling, and tools for code quality and testing.",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --config ./config/webpack.prod.js --color --progress",
