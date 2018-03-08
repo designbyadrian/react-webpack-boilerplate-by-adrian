@@ -29,6 +29,7 @@ Production:
 
 * [Code Quality](docs/codequality.md)
 * [Configuration](docs/configuration.md)
+* [Localisation](docs/localisation.md)
 * [Routing](docs/routing.md)
 * [Server](docs/server.md)
 * [Structure](docs/structure.md)

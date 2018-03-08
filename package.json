@@ -49,13 +49,18 @@
     "eslint": "^4.18.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "^7.7.0",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "history": "^4.7.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.4",
+    "i18next": "^10.5.0",
+    "i18next-browser-languagedetector": "^2.1.0",
+    "i18next-express-middleware": "^1.1.1",
+    "i18next-node-fs-backend": "^1.0.0",
+    "i18next-xhr-backend": "^1.5.1",
     "ip": "^1.1.5",
     "isdev": "^1.0.1",
     "jest": "^22.4.2",
@@ -70,6 +75,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
+    "react-i18next": "^7.5.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
@@ -90,7 +96,6 @@
       "es6": true
     },
     "plugins": [
-      "redux-saga",
       "react",
       "jsx-a11y"
     ],
@@ -110,6 +115,7 @@
         2,
         "as-needed"
       ],
+      "class-methods-use-this": 0,
       "comma-dangle": [
         2,
         "always-multiline"
@@ -120,6 +126,7 @@
       "import/no-extraneous-dependencies": 0,
       "import/no-named-as-default": 0,
       "import/no-unresolved": 2,
+      "import/no-webpack-loader-syntax": 0,
       "import/prefer-default-export": 0,
       "indent": [
         2,
@@ -128,9 +135,19 @@
           "SwitchCase": 1
         }
       ],
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "to"
+          ]
+        }
+      ],
       "jsx-a11y/aria-props": 2,
       "jsx-a11y/heading-has-content": 0,
-      "jsx-a11y/href-no-hash": 2,
       "jsx-a11y/label-has-for": 2,
       "jsx-a11y/mouse-events-have-key-events": 2,
       "jsx-a11y/role-has-required-aria-props": 2,
@@ -143,7 +160,13 @@
       "no-underscore-dangle": 0,
       "no-use-before-define": 0,
       "prefer-template": 2,
-      "class-methods-use-this": 0,
+      "quotes": [
+        "error",
+        "double",
+        {
+          "allowTemplateLiterals": true
+        }
+      ],
       "react/forbid-prop-types": 0,
       "react/jsx-first-prop-new-line": [
         2,
@@ -154,10 +177,7 @@
       "react/no-string-refs": 0,
       "react/require-extension": 0,
       "react/self-closing-comp": 0,
-      "redux-saga/no-yield-in-race": 2,
-      "redux-saga/yield-effects": 2,
       "require-yield": 0,
-      "import/no-webpack-loader-syntax": 0,
       "react/require-default-props": 0
     },
     "settings": {
