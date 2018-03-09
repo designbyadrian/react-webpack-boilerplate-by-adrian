@@ -5,7 +5,6 @@ import './style.sass';
 
 class Sidebar extends React.Component {
   render() {
-
     return (
       <aside styleName="sidebar">
         <div className="list-group">

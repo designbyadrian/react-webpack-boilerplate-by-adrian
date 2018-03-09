@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=development node server",
     "start:dev": "npm run start",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test": "eslint app/ || true && cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll"
   },
   "keywords": [
@@ -160,13 +160,6 @@
       "no-underscore-dangle": 0,
       "no-use-before-define": 0,
       "prefer-template": 2,
-      "quotes": [
-        "error",
-        "double",
-        {
-          "allowTemplateLiterals": true
-        }
-      ],
       "react/forbid-prop-types": 0,
       "react/jsx-first-prop-new-line": [
         2,

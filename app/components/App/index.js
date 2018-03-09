@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
-import { Switch, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import "../../stylesheets/global.sass";
+import '../../stylesheets/global.sass';
 
-import Menu from "../MainMenu";
+import Menu from '../MainMenu';
 
-import Home from "../../containers/Home";
-import Post from "../../containers/Post";
-import Settings from "../../containers/Settings";
-import NoMatch from "../../containers/nomatch";
+import Home from '../../containers/Home';
+import Post from '../../containers/Post';
+import Settings from '../../containers/Settings';
+import NoMatch from '../../containers/nomatch';
 
 export default () => (
   <Fragment>
