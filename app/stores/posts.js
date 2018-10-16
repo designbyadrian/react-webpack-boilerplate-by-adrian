@@ -1,11 +1,18 @@
-import { observable, action, computed } from 'mobx';
+import {
+  observable,
+  action,
+  computed,
+} from 'mobx';
 
 export default class PostStore {
   @observable isLoading = false;
+
   @observable postRegistry = observable.map();
 
   @computed get posts() {
-    return this.postRegistry.values();
+    const iterator = this.postRegistry.values();
+
+    return Array.from(iterator);
   }
 
   constructor(api) {

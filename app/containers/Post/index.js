@@ -18,7 +18,7 @@ class Post extends React.Component {
 
     return (
       <div>
-        {post &&
+        {post && (
           <Fragment>
             <Helmet
               title={`${post.title} | React 16 Webpack 4`}
@@ -30,7 +30,7 @@ class Post extends React.Component {
               <p>{post.description}</p>
             </div>
           </Fragment>
-        }
+        )}
       </div>
     );
   }

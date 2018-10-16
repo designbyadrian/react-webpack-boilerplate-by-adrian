@@ -5,7 +5,12 @@ take extra care if you wish to use this in your own project. Check "best practic
 
 This boilerplate gives you an SAP with dynamic routing, and has the following features:
 
-• React-Router • MobX state management • i18n localisation • Hot Module Reload • Node Express server • ES6 transpiling with Babel • tools for code quality and testing.
+• React-Router • MobX state management • CSS Modules • i18n localisation • Hot Module Reload • Node Express server • ES6 transpiling with Babel • tools for code quality and testing.
+
+* React 16.5
+* MobX 5.1
+* Babel 7.1
+* Express 4.16
 
 ## 🛠 Installation
 
@@ -17,13 +22,13 @@ Requirements: [Node.js](https://nodejs.org/en/)
 
 Development:
 
-`$ npm run start` *dev server with hot reloading*
+`$ yarn run start` *dev server with hot reloading*
 
 Production:
 
-`$ npm run build` *build files for deployment*
+`$ yarn run build` *build files for deployment*
 
-`$ npm run start:prod` *start Express server using build files*
+`$ yarn run start:prod` *start Express server using build files*
 
 ## 📖 Documentation
 

@@ -10,7 +10,7 @@ import i18n from '../config/i18n';
 
 import App from './components/App';
 
-import agent from './agent';
+import api from './api';
 import PostStore from './stores/posts';
 
 const browserHistory = createBrowserHistory();
@@ -18,7 +18,7 @@ const routingStore = new RouterStore();
 
 const stores = {
   routing: routingStore,
-  postStore: new PostStore(agent.Posts),
+  postStore: new PostStore(api.Posts),
 };
 
 const history = syncHistoryWithStore(browserHistory, routingStore);

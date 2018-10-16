@@ -1,12 +1,9 @@
+/* eslint-disable one-var */
+
 const isDev = require('isdev');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractCSS = require('mini-css-extract-plugin');
 
-const extractCSS = new ExtractTextPlugin({
-  filename: 'app.css',
-  allChunks: true,
-  disable: isDev,
-});
 
 module.exports = {
   output: {
@@ -19,69 +16,65 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       // Global block for CSS framework
       {
         test: /\.(scss|sass)$/,
         include: /stylesheets\/global/,
-        use: extractCSS.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: !isDev,
-              },
+        use: [
+          isDev ? 'style-loader' : ExtractCSS.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [require('autoprefixer')]
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [require('autoprefixer')], // eslint-disable-line global-require
             },
-            'sass-loader'
-          ],
-        }),
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.(scss|sass)$/,
         exclude: [/node_modules/, /stylesheets\/global/],
-        use: extractCSS.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: !isDev,
-                modules: true,
-                localIdentName: isDev
-                  ? '[path]-[name]_[local]_[hash:base64:5]'
-                  : '[name]-[local]-[hash:base64:6]',
-              },
+        use: [
+          isDev ? 'style-loader' : ExtractCSS.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: isDev
+                ? '[path]-[name]_[local]_[hash:base64:5]'
+                : '[name]-[local]-[hash:base64:6]',
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [require('autoprefixer')]
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [require('autoprefixer')], // eslint-disable-line global-require
             },
-            'sass-loader'
-          ],
-        }),
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
-          }
-        ]
-      }
-    ]
+            loader: 'html-loader',
+          },
+        ],
+      },
+    ],
   },
-  plugins: [
-    extractCSS,
-  ]
+  plugins: [],
 };

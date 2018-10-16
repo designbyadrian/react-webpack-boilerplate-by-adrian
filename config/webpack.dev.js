@@ -1,7 +1,11 @@
+/* eslint-disable one-var */
+
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const notifier = require('node-notifier');
 
 const baseConfig = require('./webpack.base.js');
 
@@ -11,6 +15,22 @@ const plugins = [
     template: 'app/index.html',
     inject: true,
   }),
+  new FriendlyErrorsWebpackPlugin({
+    clearConsole: false,
+    onErrors: (severity, errors) => {
+      if (severity !== 'error') {
+        return;
+      }
+
+      const error = errors[0];
+      notifier.notify({
+        title: 'Webpack error',
+        message: `${severity}: ${error.name}`,
+        subtitle: error.file || '',
+        // icon: path.join(process.cwd(), 'assets/logo_box.png'),
+      });
+    },
+  }),
 ];
 
 module.exports = merge(baseConfig, {
@@ -19,5 +39,5 @@ module.exports = merge(baseConfig, {
     'webpack-hot-middleware/client?reload=true',
     path.join(process.cwd(), 'app/index.js'),
   ],
-  plugins: plugins,
+  plugins,
 });

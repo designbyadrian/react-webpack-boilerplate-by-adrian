@@ -22,6 +22,10 @@ Providers of data and state to containers. To aid testing, stores themselves don
 
 Separating stores from the containers is inspired by [gothinkster/react-mobx-realworld-example-app](https://github.com/gothinkster/react-mobx-realworld-example-app/tree/master/src) and is generally a good practise.
 
+## Data from APIs
+
+See `app/index.js`, where the Posts store is instantiated with an object from `app/api.js`. In there, you set up external - or local - calls with the Fetch API.
+
 ## State management
 
 This boilerplate uses MobX for data store and state management. It's an excellent framework that understands that spreading actions, reducers, and async reducers might not actually make your life easier. *cough* ***Redux*** *cough*. How to use MobX is best described through the example app.
