@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
+import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 
 import '../../stylesheets/global.sass';
 
@@ -10,7 +12,7 @@ import Post from '../../containers/Post';
 import Settings from '../../containers/Settings';
 import NoMatch from '../../containers/nomatch';
 
-export default () => (
+const App = () => (
   <Fragment>
     <Menu />
     <div className="container">
@@ -23,3 +25,5 @@ export default () => (
     </div>
   </Fragment>
 );
+
+export default hot(module)(withRouter(App));
