@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
@@ -12,16 +14,8 @@ module.exports = {
       lines: 98,
     },
   },
-  moduleDirectories: [
-    'node_modules',
-    'app',
-  ],
+  moduleDirectories: ['node_modules', path.resolve(process.cwd(), 'app')],
   moduleNameMapper: {
-    'components(.*)$': '<rootDir>/app/components/$1',
-    'constants(.*)$': '<rootDir>/app/constants/$1',
-    'containers(.*)$': '<rootDir>/app/containers/$1',
-    'utils(.*)$': '<rootDir>/app/utils/$1',
-    'styles(.*)$': '<rootDir>/app/stylesheets/$1',
     '\\.module\\.(c|le|sc|sa)ss$': 'identity-obj-proxy',
     '\\.(c|le|sc|sa)ss$': require.resolve('./tests/style.mock.js'),
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': require.resolve('./tests/file.mock.js'), // eslint-disable-line max-len

@@ -9,13 +9,7 @@
   ],
   "plugins": [
     ["module-resolver", {
-      "alias": {
-        "components": "./app/components",
-        "constants": "./app/constants",
-        "containers": "./app/containers",
-        "utils": "./app/utils",
-        "styles": "./app/stylesheets",
-      }
+      "root": ["./app"]
     }],
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose": true }],

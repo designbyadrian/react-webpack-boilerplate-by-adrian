@@ -3,14 +3,14 @@ import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
-import '../../stylesheets/global.sass';
+import 'stylesheets/global.sass';
 
-import Menu from '../MainMenu';
+import Menu from 'components/MainMenu';
 
-import Home from '../../containers/Home';
-import Post from '../../containers/Post';
-import Settings from '../../containers/Settings';
-import NoMatch from '../../containers/nomatch';
+import Home from 'containers/Home';
+import Post from 'containers/Post';
+import Settings from 'containers/Settings';
+import NoMatch from 'containers/nomatch';
 
 const App = () => (
   <Fragment>
