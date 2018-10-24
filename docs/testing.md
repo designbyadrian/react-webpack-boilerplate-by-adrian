@@ -16,6 +16,8 @@ You need to install eslint and its libraries globally to use it from the CLI:
 
 [Jest](https://facebook.github.io/jest/) is used by Facebook to test all JavaScript code including React applications. A folder named `/coverage` will be created featuring javascript classes and components you have (and haven't) covered.
 
+## React Testing Library
+
 ## Run
 
 Run all tests with

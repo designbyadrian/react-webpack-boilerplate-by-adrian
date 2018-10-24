@@ -1,7 +1,7 @@
 import React from 'react';
 import { inject, observer, PropTypes } from 'mobx-react';
 
-import Card from '../Card';
+import Card from 'components/Card';
 
 @inject('postStore')
 @observer

@@ -1,3 +1,4 @@
+/* eslint-disable one-var */
 const i18next = require('i18next');
 const backend = require('i18next-node-fs-backend');
 

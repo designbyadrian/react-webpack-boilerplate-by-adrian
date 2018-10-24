@@ -6,9 +6,9 @@ import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { Router } from 'react-router';
 import { I18nextProvider } from 'react-i18next';
 
-import i18n from '../config/i18n';
+import App from 'components/App';
 
-import App from './components/App';
+import i18n from '../config/i18n';
 
 import api from './api';
 import PostStore from './stores/posts';

@@ -4,11 +4,13 @@
   "description": "React 16 and Webpack 4 setup with React-Router, MobX state management, i18n localisation, Hot Module Reload, Node Express server, ES6 transpiling, and tools for code quality and testing.",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --config ./config/webpack.prod.js --color --progress",
+    "lint": "eslint app/ || true",
     "start": "cross-env NODE_ENV=development node server",
-    "start:dev": "npm run start",
+    "start:dev": "yarn run start",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "test": "eslint app/ || true && cross-env NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "validate": "yarn run lint && yarn run test"
   },
   "keywords": [
     "react",
@@ -21,23 +23,24 @@
     "eslint",
     "sasslint",
     "jest",
-    "istanbul"
+    "react-testing-library"
   ],
   "author": "Adrian von Gegerfelt <adrian@designbyadrian.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
-    "enzyme": "3.3.0",
-    "enzyme-adapter-react-16": "1.1.1",
-    "enzyme-to-json": "3.3.3",
+    "babel-plugin-module-resolver": "^3.1.1",
     "eslint": "5.6.1",
     "eslint-config-airbnb": "17.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.0-beta.1",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
     "friendly-errors-webpack-plugin": "1.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "23.6.0",
+    "react-testing-library": "^5.2.1",
     "webpack-bundle-analyzer": "3.0.2",
     "webpack-dev-middleware": "3.4.0",
     "webpack-hot-middleware": "2.24.2"
@@ -51,6 +54,7 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "autoprefixer": "8.1.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-loader": "8.0.2",
     "babel-plugin-react-css-modules": "3.4.2",
     "babel-plugin-transform-react-remove-prop-types": "0.4.18",
@@ -115,7 +119,7 @@
       "jsx-a11y"
     ],
     "parserOptions": {
-      "ecmaVersion": 6,
+      "ecmaVersion": 2018,
       "sourceType": "module",
       "ecmaFeatures": {
         "jsx": true
@@ -126,98 +130,49 @@
         "error",
         "as-needed"
       ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "class-methods-use-this": 0,
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ],
-      "import/imports-first": 0,
-      "import/newline-after-import": 0,
-      "import/no-dynamic-require": 0,
-      "import/no-extraneous-dependencies": 0,
-      "import/no-named-as-default": 0,
-      "import/no-unresolved": 2,
-      "import/no-webpack-loader-syntax": 0,
-      "import/prefer-default-export": 0,
+      "import/no-extraneous-dependencies": "off",
       "indent": [
-        2,
+        "warn",
         2,
         {
-          "SwitchCase": 1
+          "SwitchCase": 1,
+          "VariableDeclarator": {
+            "var": 2,
+            "let": 2,
+            "const": 3
+          }
         }
       ],
-      "jsx-a11y/anchor-is-valid": [
+      "max-len": [
+        "warn",
+        {
+          "code": 100,
+          "ignoreTrailingComments": true
+        }
+      ],
+      "no-console": "off",
+      "no-underscore-dangle": "off",
+      "one-var": [
         "error",
         {
-          "components": [
-            "Link"
-          ],
-          "specialLink": [
-            "to"
-          ]
+          "var": "never",
+          "let": "always",
+          "const": "always"
         }
       ],
-      "jsx-a11y/aria-props": 2,
-      "jsx-a11y/heading-has-content": 0,
-      "jsx-a11y/label-has-for": 2,
-      "jsx-a11y/mouse-events-have-key-events": 2,
-      "jsx-a11y/role-has-required-aria-props": 2,
-      "jsx-a11y/role-supports-aria-props": 2,
-      "max-len": 0,
-      "newline-per-chained-call": 0,
-      "no-confusing-arrow": 0,
-      "no-console": 1,
-      "no-plusplus": 0,
-      "no-underscore-dangle": 0,
-      "no-use-before-define": 0,
-      "prefer-template": 2,
-      "react/forbid-prop-types": 0,
-      "react/jsx-first-prop-new-line": [
-        2,
-        "multiline"
+      "react/forbid-prop-types": "off",
+      "react/destructuring-assignment": [
+        "warn",
+        "never"
       ],
-      "react/jsx-filename-extension": 0,
-      "react/jsx-no-target-blank": 0,
-      "react/no-string-refs": 0,
-      "react/require-extension": 0,
-      "react/self-closing-comp": 0,
-      "require-yield": 0,
-      "react/require-default-props": 0
+      "react/require-default-props": "warn",
+      "react/jsx-filename-extension": "off",
+      "react/jsx-wrap-multilines": "off"
     },
     "settings": {
       "import/resolver": {
-        "webpack": {
-          "config": "./config/webpack.prod.js"
-        }
+        "babel-module": {}
       }
     }
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "app/**/*.{js,jsx}",
-      "!app/**/*.test.{js,jsx}",
-      "!app/index.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 98,
-        "branches": 91,
-        "functions": 98,
-        "lines": 98
-      }
-    },
-    "moduleDirectories": [
-      "node_modules",
-      "app"
-    ],
-    "moduleNameMapper": {
-      ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/config/tests/mocks/cssModule.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/tests/mocks/image.js"
-    },
-    "testRegex": ".*\\.test\\.js$"
   }
 }

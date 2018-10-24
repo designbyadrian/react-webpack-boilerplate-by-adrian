@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Card mounts 1`] = `
+<div
+  class="card style-module-card"
+>
+  <div
+    class="card-body"
+  >
+    <h5
+      class="card-title"
+    />
+    <a
+      href="/post/undefined"
+    >
+      readmore
+    </a>
+  </div>
+</div>
+`;

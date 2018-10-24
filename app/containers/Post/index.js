@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
@@ -7,14 +8,19 @@ import Helmet from 'react-helmet';
 @withRouter
 @observer
 class Post extends React.Component {
+  static propTypes = {
+    match: PropTypes.object,
+    postStore: PropTypes.object,
+  }
+
   componentDidMount() {
     const { slug } = this.props.match.params;
     this.props.postStore.loadPost(slug, { acceptCached: true });
   }
 
   render() {
-    const { slug } = this.props.match.params;
-    const post = this.props.postStore.getPost(slug);
+    const { slug } = this.props.match.params,
+          post = this.props.postStore.getPost(slug);
 
     return (
       <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
-import './style.sass';
+import './style.module.sass';
 
 const Card = props => {
   const { t } = props;

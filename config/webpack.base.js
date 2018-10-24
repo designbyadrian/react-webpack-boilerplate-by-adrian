@@ -10,6 +10,15 @@ module.exports = {
     path: path.resolve(process.cwd(), 'build'),
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      components: path.resolve(process.cwd(), 'app/components'),
+      constants: path.resolve(process.cwd(), 'app/constants'),
+      containers: path.resolve(process.cwd(), 'app/containers'),
+      utils: path.resolve(process.cwd(), 'app/utils'),
+      styles: path.resolve(process.cwd(), 'app/stylesheets'),
+    },
+  },
   module: {
     rules: [
       {

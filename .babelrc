@@ -8,6 +8,15 @@
     "@babel/preset-react",
   ],
   "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "components": "./app/components",
+        "constants": "./app/constants",
+        "containers": "./app/containers",
+        "utils": "./app/utils",
+        "styles": "./app/stylesheets",
+      }
+    }],
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-proposal-object-rest-spread",
@@ -46,7 +55,7 @@
     "test": {
       "plugins": [
         ["babel-plugin-react-css-modules", {
-          "generateScopedName": "[name]-[local]-[hash:base64:6]",
+          "generateScopedName": "[name]-[local]",
           "filetypes": {
             ".sass": {
               "syntax": "postcss-sass"
