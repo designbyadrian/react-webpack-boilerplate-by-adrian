@@ -1,4 +1,5 @@
 /* eslint-disable one-var */
+const path = require('path');
 const i18next = require('i18next');
 const backend = require('i18next-node-fs-backend');
 
@@ -23,8 +24,8 @@ i18next
     },
 
     backend: {
-      loadPath: `${process.cwd()}/locales/{{lng}}/{{ns}}.json`,
-      addPath: `${process.cwd()}/locales/{{lng}}/{{ns}}.missing.json`,
+      loadPath: `${path.join(__dirname, '../')}/locales/{{lng}}/{{ns}}.json`,
+      addPath: `${path.join(__dirname, '../')}/locales/{{lng}}/{{ns}}.missing.json`,
     },
     nsSeparator: '#||#',
     keySeparator: '#|#',

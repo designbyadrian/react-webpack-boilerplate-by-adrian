@@ -54,7 +54,7 @@ const plugins = [
 
 module.exports = merge(baseConfig, {
   mode: 'production',
-  entry: path.join(process.cwd(), 'app/index.js'),
+  entry: path.join(__dirname, '../app/index.js'),
   optimization,
   plugins,
 });

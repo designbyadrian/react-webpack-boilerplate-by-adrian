@@ -42,7 +42,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
 // Production middlewares
 const addProdMiddlewares = (app, options) => {
   const publicPath = options.publicPath || '/';
-  const outputPath = options.outputPath || path.resolve(process.cwd(), 'build');
+  const outputPath = options.outputPath || path.join(__dirname, '../../build');
 
   // compression middleware compresses your server responses which makes them
   // smaller (applies also to assets). You can read more about that technique

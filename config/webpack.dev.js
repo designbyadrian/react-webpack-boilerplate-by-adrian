@@ -27,7 +27,7 @@ const plugins = [
         title: 'Webpack error',
         message: `${severity}: ${error.name}`,
         subtitle: error.file || '',
-        // icon: path.join(process.cwd(), 'assets/logo_box.png'),
+        // icon: path.join(__dirname, '../assets/logo.png'),
       });
     },
   }),
@@ -37,7 +37,7 @@ module.exports = merge(baseConfig, {
   mode: 'development',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'app/index.js'),
+    path.join(__dirname, '../app/index.js'),
   ],
   plugins,
 });

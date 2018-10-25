@@ -4,14 +4,13 @@ const isDev = require('isdev');
 const path = require('path');
 const ExtractCSS = require('mini-css-extract-plugin');
 
-
 module.exports = {
   output: {
-    path: path.resolve(process.cwd(), 'build'),
+    path: path.join(__dirname, '../build'),
     publicPath: '/',
   },
   resolve: {
-    modules: ['node_modules', path.resolve(process.cwd(), 'app')],
+    modules: ['node_modules', path.join(__dirname, '../app')],
   },
   module: {
     rules: [

@@ -1,11 +1,11 @@
-/* eslint consistent-return:0 */
+/* eslint-disable consistent-return, one-var */
 
-const express = require("express");
-const logger = require("./logger");
+const path = require('path');
+const express = require('express');
+const logger = require('./logger');
 
-const argv = require("minimist")(process.argv.slice(2));
-const setup = require("./middlewares/frontend");
-const { resolve } = require("path");
+const argv = require('minimist')(process.argv.slice(2));
+const setup = require('./middlewares/frontend');
 
 const app = express();
 
@@ -18,7 +18,7 @@ const port = argv.port || process.env.PORT || 8080;
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
-  outputPath: resolve(process.cwd(), 'build'),
+  outputPath: path.join(__dirname, '../build'),
   publicPath: '/',
 });
 

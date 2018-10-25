@@ -14,7 +14,7 @@ module.exports = {
       lines: 98,
     },
   },
-  moduleDirectories: ['node_modules', path.resolve(process.cwd(), 'app')],
+  moduleDirectories: ['node_modules', path.join(__dirname, 'app')],
   moduleNameMapper: {
     '\\.module\\.(c|le|sc|sa)ss$': 'identity-obj-proxy',
     '\\.(c|le|sc|sa)ss$': require.resolve('./tests/style.mock.js'),
