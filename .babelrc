@@ -35,6 +35,7 @@
     "production": {
       "plugins": [
         "transform-react-remove-prop-types",
+        ["react-remove-properties", {"properties": ["data-test", "data-testid", "data-test-id"]}],
         ["babel-plugin-react-css-modules", {
           "generateScopedName": "[name]-[local]-[hash:base64:6]",
           "filetypes": {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Sidebar mounts 1`] = `
+exports[`components/Sidebar matches snapshot 1`] = `
 <aside
   class="style-module-sidebar"
 >

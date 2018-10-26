@@ -10,8 +10,8 @@ describe('components/Stack', () => {
     store = { postStore: { posts: [], loadPosts: jest.fn() } };
   });
 
-  it('mounts', () => {
-    const { container } = render(<Stack postStore={store.postStore} />);
+  it('matches snapshot', () => {
+    const { container } = render(<Stack {...store} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

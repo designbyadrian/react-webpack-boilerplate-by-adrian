@@ -10,9 +10,15 @@ describe('components/Menu', () => {
     store = { routing: {} };
   });
 
-  it('mounts', () => {
-    const { container } = render(<Menu routing={store.routing} />);
+  it('matches snapshot', () => {
+    const { container } = render(<Menu {...store} />);
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('has navbar', () => {
+    const { container, getByTestId } = render(<Menu {...store} />);
+
+    expect(getByTestId('navbar')).toBeTruthy();
   });
 });

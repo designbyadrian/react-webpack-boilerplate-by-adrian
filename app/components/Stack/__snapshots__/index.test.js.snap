@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Stack mounts 1`] = `
+exports[`components/Stack matches snapshot 1`] = `
 <div
   class="row"
 />

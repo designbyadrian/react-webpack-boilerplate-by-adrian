@@ -19,7 +19,7 @@ class Menu extends React.Component {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <Link className="navbar-brand" to="/">React <strong>16</strong></Link>
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mr-auto" data-testid="navbar">
             <li className={`nav-item ${pathname === '/' ? 'active' : ''}`}>
               <Link to="/" className="nav-link">{t('menu.home')}</Link>
             </li>

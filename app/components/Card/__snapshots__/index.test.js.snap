@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Card mounts 1`] = `
+exports[`components/Card matches snapshot 1`] = `
 <div
   class="card style-module-card"
 >
