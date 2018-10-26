@@ -39,6 +39,7 @@
     "friendly-errors-webpack-plugin": "1.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "23.6.0",
+    "jest-dom": "^2.1.0",
     "react-testing-library": "^5.2.1",
     "webpack-bundle-analyzer": "3.0.2",
     "webpack-dev-middleware": "3.4.0",
