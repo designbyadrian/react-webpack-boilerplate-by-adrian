@@ -8,8 +8,8 @@
     "start": "cross-env NODE_ENV=development node server",
     "start:dev": "yarn run start",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "validate": "yarn run lint && yarn run test"
   },
   "keywords": [

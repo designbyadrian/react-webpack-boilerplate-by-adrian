@@ -3,15 +3,15 @@ const path = require('path');
 module.exports = {
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
-    '!app/**/*.test.{js,jsx}',
     '!app/index.js',
+    '!app/api.js',
   ],
   coverageThreshold: {
     global: {
-      statements: 98,
-      branches: 91,
-      functions: 98,
-      lines: 98,
+      statements: 80,
+      branches: 95,
+      functions: 95,
+      lines: 80,
     },
   },
   moduleDirectories: ['node_modules', path.join(__dirname, 'app')],
